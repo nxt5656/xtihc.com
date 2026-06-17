@@ -2,27 +2,23 @@ import { defineConfig } from 'vitepress'
 
 export default defineConfig({
   title: "xtihc",
-  description: "记录技术、生活与思考的技术书屋",
-  
-  // 核心避坑：绑定自定义域名后，base 路径必须设为 '/' [15]
+  description: "男女对立拳击手;反帝制急先锋;换命打法科普员",
   base: '/',
-  
-  // 开启 cleanUrls 隐藏链接末尾的 .html [18]
   cleanUrls: true,
-
+  head: [
+    ['link', { rel: 'icon', href: '/favicon.ico' }]
+  ],
   themeConfig: {
     nav: [
       { text: '首页', link: '/' },
-      //{ text: '博客', link: '/blog/start' }
+      { text: '博客', link: '/blog/start' }
     ],
-
-    // 左侧侧边栏导航 [12]
     sidebar: {
-      '//': [
+      '/blog/': [
         {
           text: '博客',
           items: [
-            { text: '我回来了~', link: '/blog/start' }
+            { text: '2026-06-17 我回来了~', link: '/blog/start' }
           ]
         }
       ]
