@@ -11,7 +11,7 @@ hero:
       link: /guide/getting-started
     - theme: alt
       text: 在 GitHub 关注我
-      link: https://github.com/nxt5656/xtihc.com
+      link: https://xtihc.com
 
 features:
   - icon: 📖
