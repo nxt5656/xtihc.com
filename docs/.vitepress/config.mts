@@ -1,7 +1,7 @@
 import { defineConfig } from 'vitepress'
 
 export default defineConfig({
-  title: "xtihc.com",
+  title: "xtihc",
   description: "记录技术、生活与思考的技术书屋",
   
   // 核心避坑：绑定自定义域名后，base 路径必须设为 '/' [15]
@@ -13,23 +13,23 @@ export default defineConfig({
   themeConfig: {
     nav: [
       { text: '首页', link: '/' },
-      { text: '知识库', link: '/guide/getting-started' }
+      //{ text: '博客', link: '/blog/start' }
     ],
 
     // 左侧侧边栏导航 [12]
     sidebar: {
-      '/guide/': [
+      '//': [
         {
-          text: '💡 新手指南',
+          text: '博客',
           items: [
-            { text: '准备工作', link: '/guide/getting-started' }
+            { text: '我回来了~', link: '/blog/start' }
           ]
         }
       ]
     },
 
     socialLinks: [
-      { icon: 'github', link: 'https://github.com/nxt5656/xtihc.com' }
+      { icon: 'github', link: 'https://xtihc.com' }
     ],
 
     // 启用极速离线本地搜索 [10]
