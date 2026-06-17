@@ -16,7 +16,7 @@ export default defineConfig({
     sidebar: {
       '/blog/': [
         {
-          text: '博客',
+          text: '记录',
           items: [
             { text: '2026-06-17 我回来了~', link: '/blog/start' }
           ]
