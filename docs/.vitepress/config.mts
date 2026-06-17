@@ -11,14 +11,15 @@ export default defineConfig({
   themeConfig: {
     nav: [
       { text: '首页', link: '/' },
-      { text: '博客', link: '/blog/start' }
+      { text: '标签分类', link: '/tags' },
+      { text: '博客', link: '/posts/start' }
     ],
     sidebar: {
-      '/blog/': [
+      '/posts/': [
         {
-          text: '记录',
+          text: '文章',
           items: [
-            { text: '2026-06-17 我回来了~', link: '/blog/start' }
+            { text: '2026-06-17 我回来了~', link: '/posts/start' }
           ]
         }
       ]

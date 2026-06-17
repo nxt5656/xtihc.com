@@ -8,7 +8,7 @@ hero:
   actions:
     - theme: brand
       text: 开始阅读
-      link: /blog/start
+      link: /posts/start
     - theme: alt
       text: 在 GitHub 关注我
       link: https://xtihc.com
