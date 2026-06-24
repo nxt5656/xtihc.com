@@ -28,7 +28,7 @@ export default defineConfig({
     },
 
     socialLinks: [
-      { icon: 'github', link: 'https://xtihc.com' }
+      { icon: 'gmail', link: 'mailto:nxt5656@example.com' }
     ],
 
     // 启用极速离线本地搜索 [10]
