@@ -5,8 +5,16 @@ export default defineConfig({
   description: "男女对立拳击手;反帝制急先锋;换命打法科普员",
   base: '/',
   cleanUrls: true,
+  lastUpdated: true,
   sitemap: {
-    hostname: 'https://xtihc.com'
+    hostname: 'https://xtihc.com',
+    transformItems: (items) => {
+      return items.map((item) => ({
+        ...item,
+        changefreq: 'daily',
+        priority: item.url === '' ? 1.0 : 0.8
+      }))
+    }
   },
   head: [
     ['link', { rel: 'icon', href: '/favicon.ico' }]
