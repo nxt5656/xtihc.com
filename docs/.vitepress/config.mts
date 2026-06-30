@@ -19,6 +19,7 @@ export default defineConfig({
         {
           text: '文章',
           items: [
+            { text: '2026-06-30 为什么浙江杭州经济这么发达? 01', link: '/posts/2026-06/2026-06-30' },
             { text: '2026-06-24 自行车为什么不能站起来蹬?', link: '/posts/2026-06/2026-06-24_1' },
             { text: '2026-06-24 坏掉的鼠标', link: '/posts/2026-06/2026-06-24' },
             { text: '2026-06-17 我回来了~', link: '/posts/start' }
