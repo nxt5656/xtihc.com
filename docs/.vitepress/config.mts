@@ -117,7 +117,7 @@ export default defineConfig({
   // 共享主题配置
   themeConfig: {
     socialLinks: [
-      { icon: 'gmail', link: 'mailto:nxt5656@example.com' }
+      { icon: 'gmail', link: 'mailto:nxt5656@gmail.com' }
     ],
 
     // 启用极速离线本地搜索
