@@ -10,8 +10,8 @@ export interface Post {
 declare const data: Post[]
 export { data }
 
-// 自动加载 docs/posts/ 文件夹及子文件夹下的所有 markdown 文章
-export default createContentLoader('posts/**/*.md', {
+// 自动加载所有语言文件夹下的 posts/ 目录中的 markdown 文章
+export default createContentLoader('**/posts/**/*.md', {
   transform(raw): Post[] {
     return raw
       .map(({ url, frontmatter }) => ({

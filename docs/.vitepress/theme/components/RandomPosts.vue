@@ -1,10 +1,43 @@
 <script setup>
-import { ref, onMounted } from 'vue'
-import { data as posts } from '../posts.data.ts'
+import { ref, computed, onMounted } from 'vue'
+import { useData } from 'vitepress'
+import { data as allPosts } from '../posts.data.ts'
+
+const { page } = useData()
+
+// 识别当前语言前缀
+const currentLangPrefix = computed(() => {
+  const path = page.value.relativePath
+  if (path.startsWith('en/')) return '/en/'
+  if (path.startsWith('ja/')) return '/ja/'
+  return '/'
+})
+
+// 根据语言过滤文章列表
+const langFilteredPosts = computed(() => {
+  const prefix = currentLangPrefix.value
+  return allPosts.filter(post => {
+    if (prefix === '/en/') {
+      return post.url.startsWith('/en/')
+    } else if (prefix === '/ja/') {
+      return post.url.startsWith('/ja/')
+    } else {
+      return !post.url.startsWith('/en/') && !post.url.startsWith('/ja/')
+    }
+  })
+})
+
+// UI 标题多语言字典
+const i18n = {
+  '/en/': 'Recommended Reading',
+  '/ja/': 'おすすめの記事',
+  '/': '随机推荐阅读'
+}
 
 const randomPosts = ref([])
 
 onMounted(() => {
+  const posts = langFilteredPosts.value
   if (posts && posts.length > 0) {
     // Fisher-Yates shuffle
     const shuffled = [...posts].sort(() => 0.5 - Math.random())
@@ -16,7 +49,7 @@ onMounted(() => {
 <template>
   <div v-if="randomPosts.length > 0" class="random-posts-section">
     <div class="container">
-      <h2 class="title">随机推荐阅读</h2>
+      <h2 class="title">{{ i18n[currentLangPrefix] }}</h2>
       <div class="items">
         <div v-for="post in randomPosts" :key="post.url" class="item-wrapper">
           <a :href="post.url" class="item-link">

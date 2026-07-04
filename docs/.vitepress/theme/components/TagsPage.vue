@@ -1,11 +1,55 @@
 <script setup>
 import { ref, computed } from 'vue'
-import { data as posts } from '../posts.data.ts' // 引入刚才生成的编译时数据 [9]
+import { useData } from 'vitepress'
+import { data as allPosts } from '../posts.data.ts' // 引入刚才生成的编译时数据 [9]
+
+const { page } = useData()
+
+// 识别当前语言前缀
+const currentLangPrefix = computed(() => {
+  const path = page.value.relativePath
+  if (path.startsWith('en/')) return '/en/'
+  if (path.startsWith('ja/')) return '/ja/'
+  return '/'
+})
+
+// 根据语言过滤文章列表
+const langFilteredPosts = computed(() => {
+  const prefix = currentLangPrefix.value
+  return allPosts.filter(post => {
+    if (prefix === '/en/') {
+      return post.url.startsWith('/en/')
+    } else if (prefix === '/ja/') {
+      return post.url.startsWith('/ja/')
+    } else {
+      return !post.url.startsWith('/en/') && !post.url.startsWith('/ja/')
+    }
+  })
+})
+
+// UI 文本的多语言字典
+const i18n = {
+  '/en/': {
+    readingWithTag: 'Reading articles containing',
+    allPosts: 'All Articles',
+    postsCount: 'posts'
+  },
+  '/ja/': {
+    readingWithTag: 'タグを含む記事を閲覧中',
+    allPosts: 'すべての記事',
+    postsCount: '件'
+  },
+  '/': {
+    readingWithTag: '正在阅读含有',
+    allPosts: '全部文章',
+    postsCount: '篇'
+  }
+}
 
 // 1. 自动提取所有文章中出现的、不重复的标签
 const allTags = computed(() => {
   const tagsSet = new Set()
-  posts.forEach(post => {
+  langFilteredPosts.value.forEach(post => {
     if (Array.isArray(post.tags)) {
       post.tags.forEach(tag => tagsSet.add(tag))
     }
@@ -27,8 +71,8 @@ const toggleTag = (tag) => {
 
 // 4. 根据当前选中的标签过滤出文章列表
 const filteredPosts = computed(() => {
-  if (!selectedTag.value) return posts
-  return posts.filter(post => post.tags.includes(selectedTag.value))
+  if (!selectedTag.value) return langFilteredPosts.value
+  return langFilteredPosts.value.filter(post => post.tags.includes(selectedTag.value))
 })
 </script>
 
@@ -50,8 +94,8 @@ const filteredPosts = computed(() => {
 
     <!-- 文章列表展示区 -->
     <h3 class="list-title">
-      {{ selectedTag ? `正在阅读含有 #${selectedTag} 的文章` : '全部文章' }} 
-      ({{ filteredPosts.length }}篇)
+      {{ selectedTag ? `${i18n[currentLangPrefix].readingWithTag} #${selectedTag}` : i18n[currentLangPrefix].allPosts }} 
+      ({{ filteredPosts.length }}{{ i18n[currentLangPrefix].postsCount }})
     </h3>
 
     <ul class="post-list">

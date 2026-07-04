@@ -1,8 +1,7 @@
 import { defineConfig } from 'vitepress'
 
 export default defineConfig({
-  title: "xtihc",
-  description: "男女对立拳击手;反帝制急先锋;换命打法科普员",
+  // 全局共享基础配置
   base: '/',
   cleanUrls: true,
   lastUpdated: true,
@@ -19,33 +18,99 @@ export default defineConfig({
   head: [
     ['link', { rel: 'icon', href: '/favicon.ico' }]
   ],
-  themeConfig: {
-    nav: [
-      { text: '首页', link: '/' },
-      { text: '标签分类', link: '/tags' },
-      { text: '博客', link: '/posts/start' }
-    ],
-    sidebar: {
-      '/posts/': [
-        {
-          text: '文章',
-          items: [
-            { text: '2026-07-03 牺牲少部分人的利益，来保障大部分人的利益，是应当的吗？', link: '/posts/2026-07/2026-07-03' },
-            { text: '2026-07-01 天上飞机,地上苏E', link: '/posts/2026-07/2026-07-01' },
-            { text: '2026-06-30 为什么浙江杭州经济这么发达? 01', link: '/posts/2026-06/2026-06-30' },
-            { text: '2026-06-24 自行车为什么不能站起来蹬?', link: '/posts/2026-06/2026-06-24_1' },
-            { text: '2026-06-24 坏掉的鼠标', link: '/posts/2026-06/2026-06-24' },
-            { text: '2026-06-17 我回来了~', link: '/posts/start' }
+
+  // 多语言（国际化 i18n）配置
+  locales: {
+    // 默认语言（中文）
+    root: {
+      label: '简体中文',
+      lang: 'zh-CN',
+      title: "xtihc",
+      description: "男女对立拳击手;反帝制急先锋;换命打法科普员",
+      themeConfig: {
+        nav: [
+          { text: '首页', link: '/' },
+          { text: '标签分类', link: '/tags' },
+          { text: '博客', link: '/posts/start' }
+        ],
+        sidebar: {
+          '/posts/': [
+            {
+              text: '文章',
+              items: [
+                { text: '2026-07-03 牺牲少部分人的利益，来保障大部分人的利益，是应当的吗？', link: '/posts/2026-07/2026-07-03' },
+                { text: '2026-07-01 天上飞机,地上苏E', link: '/posts/2026-07/2026-07-01' },
+                { text: '2026-06-30 为什么浙江杭州经济这么发达? 01', link: '/posts/2026-06/2026-06-30' },
+                { text: '2026-06-24 自行车为什么不能站起来蹬?', link: '/posts/2026-06/2026-06-24_1' },
+                { text: '2026-06-24 坏掉的鼠标', link: '/posts/2026-06/2026-06-24' },
+                { text: '2026-06-17 我回来了~', link: '/posts/start' }
+              ]
+            }
           ]
         }
-      ]
+      }
     },
 
+    // 英文版配置
+    en: {
+      label: 'English',
+      lang: 'en-US',
+      link: '/en/',
+      title: 'xtihc',
+      description: 'A personal blog and thought log',
+      themeConfig: {
+        nav: [
+          { text: 'Home', link: '/en/' },
+          { text: 'Tags', link: '/en/tags' },
+          { text: 'Blog', link: '/en/posts/start' }
+        ],
+        sidebar: {
+          '/en/posts/': [
+            {
+              text: 'Articles',
+              items: [
+                { text: '2026-06-17 I\'m back~', link: '/en/posts/start' }
+              ]
+            }
+          ]
+        }
+      }
+    },
+
+    // 日文版配置
+    ja: {
+      label: '日本語',
+      lang: 'ja-JP',
+      link: '/ja/',
+      title: 'xtihc',
+      description: '個人ブログと思考ログ',
+      themeConfig: {
+        nav: [
+          { text: 'ホーム', link: '/ja/' },
+          { text: 'タグ', link: '/ja/tags' },
+          { text: 'ブログ', link: '/ja/posts/start' }
+        ],
+        sidebar: {
+          '/ja/posts/': [
+            {
+              text: '記事一覧',
+              items: [
+                { text: '2026-06-17 戻ってきました~', link: '/ja/posts/start' }
+              ]
+            }
+          ]
+        }
+      }
+    }
+  },
+
+  // 共享主题配置
+  themeConfig: {
     socialLinks: [
       { icon: 'gmail', link: 'mailto:nxt5656@example.com' }
     ],
 
-    // 启用极速离线本地搜索 [10]
+    // 启用极速离线本地搜索
     search: {
       provider: 'local'
     },
