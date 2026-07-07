@@ -38,6 +38,7 @@ export default defineConfig({
             {
               text: '文章',
               items: [
+                { text: '2026-07-08 “关系”的分量，与城市的刻度', link: '/posts/2026-07/2026-07-08' },
                 { text: '2026-07-03 牺牲少部分人的利益，来保障大部分人的利益，是应当的吗？', link: '/posts/2026-07/2026-07-03' },
                 { text: '2026-07-01 天上飞机,地上苏E', link: '/posts/2026-07/2026-07-01' },
                 { text: '2026-06-30 为什么浙江杭州经济这么发达? 01', link: '/posts/2026-06/2026-06-30' },
@@ -69,6 +70,7 @@ export default defineConfig({
             {
               text: 'Articles',
               items: [
+                { text: '2026-07-08 The Weight of "Guanxi" and the Barometer of a City', link: '/en/posts/2026-07/2026-07-08' },
                 { text: '2026-07-03 Is It Justified to Sacrifice the Interests of the Few to Protect the Many?', link: '/en/posts/2026-07/2026-07-03' },
                 { text: '2026-07-01 Airplanes in the Sky, Su-E on the Ground', link: '/en/posts/2026-07/2026-07-01' },
                 { text: '2026-06-30 Why Is Hangzhou, Zhejiang\'s Economy So Developed? 01', link: '/en/posts/2026-06/2026-06-30' },
@@ -100,6 +102,7 @@ export default defineConfig({
             {
               text: '記事一覧',
               items: [
+                { text: '2026-07-08 「コネ」の重みと、都市のポテンシャルを測る尺度', link: '/ja/posts/2026-07/2026-07-08' },
                 { text: '2026-07-03 少数の利益を犠牲にして多数の利益を守ることは、本当に正当なのだろうか？', link: '/ja/posts/2026-07/2026-07-03' },
                 { text: '2026-07-01 空には飛行機、陸には蘇E（スーイー）', link: '/ja/posts/2026-07/2026-07-01' },
                 { text: '2026-06-30 浙江省杭州の経済はなぜこれほど発展しているのか？ 01', link: '/ja/posts/2026-06/2026-06-30' },
