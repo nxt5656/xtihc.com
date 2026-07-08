@@ -119,6 +119,7 @@ const filteredPosts = computed(() => {
 .tag-cloud {
   display: flex;
   flex-wrap: wrap;
+  justify-content: center;
   gap: 10px;
   margin-bottom: 20px;
 }
