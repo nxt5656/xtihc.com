@@ -38,6 +38,7 @@ export default defineConfig({
             {
               text: '文章',
               items: [
+                { text: '2026-07-08 把“朋友”搞得多多的，以及那张沉默的账单', link: '/posts/2026-07/2026-07-08_2' },
                 { text: '2026-07-08 中国的“斩杀线”：为什么普通人都在拼命存钱？', link: '/posts/2026-07/2026-07-08_1' },
                 { text: '2026-07-08 “关系”的分量，与城市的刻度', link: '/posts/2026-07/2026-07-08' },
                 { text: '2026-07-03 牺牲少部分人的利益，来保障大部分人的利益，是应当的吗？', link: '/posts/2026-07/2026-07-03' },
@@ -71,6 +72,7 @@ export default defineConfig({
             {
               text: 'Articles',
               items: [
+                { text: '2026-07-08 Making Friends Plentiful, and That Silent Bill', link: '/en/posts/2026-07/2026-07-08_2' },
                 { text: '2026-07-08 China\'s "Execution Line": Why Do Ordinary People Save Money So Desperately?', link: '/en/posts/2026-07/2026-07-08_1' },
                 { text: '2026-07-08 The Weight of "Guanxi" and the Barometer of a City', link: '/en/posts/2026-07/2026-07-08' },
                 { text: '2026-07-03 Is It Justified to Sacrifice the Interests of the Few to Protect the Many?', link: '/en/posts/2026-07/2026-07-03' },
@@ -104,6 +106,7 @@ export default defineConfig({
             {
               text: '記事一覧',
               items: [
+                { text: '2026-07-08 「友人を多くすること」と、沈黙のツケ', link: '/ja/posts/2026-07/2026-07-08_2' },
                 { text: '2026-07-08 中国の「即死ライン」：なぜ一般庶民は必死に貯金するのか？', link: '/ja/posts/2026-07/2026-07-08_1' },
                 { text: '2026-07-08 「コネ」の重みと、都市のポテンシャルを測る尺度', link: '/ja/posts/2026-07/2026-07-08' },
                 { text: '2026-07-03 少数の利益を犠牲にして多数の利益を守ることは、本当に正当なのだろうか？', link: '/ja/posts/2026-07/2026-07-03' },
