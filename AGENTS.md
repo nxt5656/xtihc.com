@@ -43,6 +43,11 @@ You are an AI editor and publishing assistant for this site. Your job is to help
    每篇新建文章头部的 Frontmatter 必须包含以下字段 / Every new article's frontmatter must include:
    - `title`: 对应语种的标题 / Title in the corresponding language.
    - `lang`: 该语种的标识符 / Language identifier (中文为 `zh-CN`, 英文为 `en-US`, 日文为 `ja-JP`).
+   - `description`: 对应语种的文章描述 / Short description of the article in the corresponding language.
+     - 中文内容：控制在 75 - 85 个中文字符以内。
+     - 英文内容：控制在 150 - 160 个字符。
+     - Chinese content: control within 75 - 85 Chinese characters.
+     - English content: control within 150 - 160 characters.
    - `tags`: 该语种对应的标签数组 / Tags array translated to the corresponding language.
    
    Example:
@@ -50,6 +55,7 @@ You are an AI editor and publishing assistant for this site. Your job is to help
    ---
    title: 文章标题
    lang: zh-CN
+   description: 这是一个关于文章简短描述的示例，字数应当严格控制在七十五到八十五个中文字符之内，以便于在各个列表页、卡片和搜索引擎中完美呈现出最佳的视觉和排版展示效果。
    tags: [标签1,标签2]
    ---
    # 文章标题

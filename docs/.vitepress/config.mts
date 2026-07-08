@@ -38,6 +38,7 @@ export default defineConfig({
             {
               text: '文章',
               items: [
+                { text: '2026-07-08 槐树下的悄悄话：谁养肥了村里的“土皇帝”？', link: '/posts/2026-07/2026-07-08_3' },
                 { text: '2026-07-08 把“朋友”搞得多多的，以及那张沉默的账单', link: '/posts/2026-07/2026-07-08_2' },
                 { text: '2026-07-08 中国的“斩杀线”：为什么普通人都在拼命存钱？', link: '/posts/2026-07/2026-07-08_1' },
                 { text: '2026-07-08 “关系”的分量，与城市的刻度', link: '/posts/2026-07/2026-07-08' },
@@ -72,6 +73,7 @@ export default defineConfig({
             {
               text: 'Articles',
               items: [
+                { text: '2026-07-08 Whispers Under the Scholar Tree: Who Fed the "Local Emperors" at the Grassroots?', link: '/en/posts/2026-07/2026-07-08_3' },
                 { text: '2026-07-08 Making Friends Plentiful, and That Silent Bill', link: '/en/posts/2026-07/2026-07-08_2' },
                 { text: '2026-07-08 China\'s "Execution Line": Why Do Ordinary People Save Money So Desperately?', link: '/en/posts/2026-07/2026-07-08_1' },
                 { text: '2026-07-08 The Weight of "Guanxi" and the Barometer of a City', link: '/en/posts/2026-07/2026-07-08' },
@@ -106,6 +108,7 @@ export default defineConfig({
             {
               text: '記事一覧',
               items: [
+                { text: '2026-07-08 槐の木の下での密談：誰が農村の「地元の皇帝」を肥え太らせたのか？', link: '/ja/posts/2026-07/2026-07-08_3' },
                 { text: '2026-07-08 「友人を多くすること」と、沈黙のツケ', link: '/ja/posts/2026-07/2026-07-08_2' },
                 { text: '2026-07-08 中国の「即死ライン」：なぜ一般庶民は必死に貯金するのか？', link: '/ja/posts/2026-07/2026-07-08_1' },
                 { text: '2026-07-08 「コネ」の重みと、都市のポテンシャルを測る尺度', link: '/ja/posts/2026-07/2026-07-08' },
