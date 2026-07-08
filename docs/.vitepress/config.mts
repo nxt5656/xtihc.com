@@ -26,7 +26,7 @@ export default defineConfig({
       label: '简体中文',
       lang: 'zh-CN',
       title: "xtihc",
-      description: "男女对立拳击手;反帝制急先锋;换命打法科普员",
+      description: "男女对立拳击手;反帝制急先锋;换命打法科普员。记录生活观察、社会批判、硬件技术、仪器改装与人生思考的个人独立博文随心录。",
       themeConfig: {
         nav: [
           { text: '首页', link: '/' },
@@ -60,7 +60,7 @@ export default defineConfig({
       lang: 'en-US',
       link: '/en/',
       title: 'xtihc',
-      description: 'A personal blog and thought log',
+      description: 'A personal blog of xtihc. Covering tech essays, hardware hacks, instrument repairs, social reflections, and observations of daily life.',
       themeConfig: {
         nav: [
           { text: 'Home', link: '/en/' },
@@ -94,7 +94,7 @@ export default defineConfig({
       lang: 'ja-JP',
       link: '/ja/',
       title: 'xtihc',
-      description: '個人ブログと思考ログ',
+      description: '生活観察、社会批判、ハードウェア技術、測定器の修理・改造、そして人生についての思考を記録する、xtihcの多言語個人ブログです。',
       themeConfig: {
         nav: [
           { text: 'ホーム', link: '/ja/' },
