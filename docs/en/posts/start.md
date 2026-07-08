@@ -2,6 +2,7 @@
 title: I'm back
 lang: en-US
 tags: [domain, tech-blog, village-party-secretary, Niu Changchun, Niutan Village, facts, record]
+description: "A record of the domain migration to Cloudflare after being banned, and a factual account of the threats made by the village Party Secretary Niu Changchun."
 ---
 # I'm back
 
