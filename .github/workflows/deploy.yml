@@ -53,3 +53,9 @@ jobs:
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
+
+      - name: Submit Sitemap to IndexNow (Bing)
+        uses: bojieyang/indexnow-action@v3
+        with:
+          sitemap-location: 'https://xtihc.com/sitemap.xml'
+          key: 'eb928a3f89024f8d9516625841cb657c'

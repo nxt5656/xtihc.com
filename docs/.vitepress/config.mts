@@ -16,8 +16,91 @@ export default defineConfig({
     }
   },
   head: [
-    ['link', { rel: 'icon', href: '/favicon.ico' }]
+    ['link', { rel: 'icon', href: '/favicon.ico' }],
+    // Google & Bing Webmaster Verification 所有权验证标签占位
+    ['meta', { name: 'google-site-verification', content: 'google_verification_placeholder' }],
+    ['meta', { name: 'msvalidate.01', content: 'bing_verification_placeholder' }]
   ],
+
+  // 动态构建 HTML Head (Canonical URLs, hreflang, Open Graph, Twitter Cards, Schema JSON-LD)
+  async transformHead({ pageData }) {
+    const head: any[] = []
+
+    // 1. 规范链接 (Canonical URL) 规避重复内容分散权重
+    let cleanPath = pageData.relativePath
+      .replace(/index\.md$/, '')
+      .replace(/\.md$/, '')
+    const canonicalUrl = `https://xtihc.com/${cleanPath}`
+    head.push(['link', { rel: 'canonical', href: canonicalUrl }])
+
+    // 2. 国际化交叉链接 (hreflang alternate) 辅助多语言 SEO 收录
+    let basePath = cleanPath
+    const isEn = basePath.startsWith('en/')
+    const isJa = basePath.startsWith('ja/')
+    if (isEn) basePath = basePath.substring(3)
+    else if (isJa) basePath = basePath.substring(3)
+
+    head.push(['link', { rel: 'alternate', hreflang: 'zh-CN', href: `https://xtihc.com/${basePath}` }])
+    head.push(['link', { rel: 'alternate', hreflang: 'en-US', href: `https://xtihc.com/en/${basePath}` }])
+    head.push(['link', { rel: 'alternate', hreflang: 'ja-JP', href: `https://xtihc.com/ja/${basePath}` }])
+    head.push(['link', { rel: 'alternate', hreflang: 'x-default', href: `https://xtihc.com/${basePath}` }])
+
+    // 3. 社交分享元数据 (Open Graph & Twitter Cards)
+    const title = pageData.frontmatter.title || 'xtihc'
+    const description = pageData.frontmatter.description || '记录生活观察、社会批判、硬件技术、仪器改装与人生思考的个人独立博文随心录。'
+    const ogImage = pageData.frontmatter.image ? `https://xtihc.com${pageData.frontmatter.image}` : 'https://xtihc.com/favicon.ico'
+
+    head.push(['meta', { property: 'og:title', content: title }])
+    head.push(['meta', { property: 'og:description', content: description }])
+    head.push(['meta', { property: 'og:type', content: 'article' }])
+    head.push(['meta', { property: 'og:url', content: canonicalUrl }])
+    head.push(['meta', { property: 'og:image', content: ogImage }])
+
+    head.push(['meta', { name: 'twitter:card', content: 'summary_large_image' }])
+    head.push(['meta', { name: 'twitter:title', content: title }])
+    head.push(['meta', { name: 'twitter:description', content: description }])
+    head.push(['meta', { name: 'twitter:image', content: ogImage }])
+
+    // 4. Schema.org BlogPosting 结构化数据 (JSON-LD) 以展示富媒体搜索卡片
+    if (pageData.relativePath.includes('/posts/') && !pageData.relativePath.endsWith('start.md')) {
+      let datePublished = pageData.frontmatter.date
+      if (!datePublished) {
+        const pathParts = pageData.relativePath.split('/')
+        const fileName = pathParts[pathParts.length - 1]
+        const dateMatch = fileName.match(/^(\d{4}-\d{2}-\d{2})/)
+        datePublished = dateMatch ? `${dateMatch[1]}T00:00:00Z` : '2026-07-08T00:00:00Z'
+      }
+
+      const jsonLd = {
+        '@context': 'https://schema.org',
+        '@type': 'BlogPosting',
+        'headline': title,
+        'description': description,
+        'image': [ogImage],
+        'datePublished': datePublished,
+        'author': [{
+          '@type': 'Person',
+          'name': '张老三',
+          'url': 'https://xtihc.com'
+        }],
+        'publisher': {
+          '@type': 'Organization',
+          'name': 'xtihc',
+          'logo': {
+            '@type': 'ImageObject',
+            'url': 'https://xtihc.com/favicon.ico'
+          }
+        },
+        'mainEntityOfPage': {
+          '@type': 'WebPage',
+          '@id': canonicalUrl
+        }
+      }
+      head.push(['script', { type: 'application/ld+json' }, JSON.stringify(jsonLd)])
+    }
+
+    return head
+  },
 
   // 多语言（国际化 i18n）配置
   locales: {
