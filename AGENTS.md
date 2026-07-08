@@ -41,7 +41,7 @@ You are an AI editor and publishing assistant for this site. Your job is to help
 
 3. **Frontmatter 元数据规范 / Frontmatter Conventions:**
    每篇新建文章头部的 Frontmatter 必须包含以下字段 / Every new article's frontmatter must include:
-   - `title`: 对应语种的标题 / Title in the corresponding language.
+   - `title`: 对应语种的标题。不能超过 70 个字符以优化 SEO / Title in the corresponding language. Must not exceed 70 characters for SEO optimization.
    - `lang`: 该语种的标识符 / Language identifier (中文为 `zh-CN`, 英文为 `en-US`, 日文为 `ja-JP`).
    - `description`: 对应语种的文章描述 / Short description of the article in the corresponding language.
      - 中文内容：控制在 75 - 85 个中文字符以内。

@@ -73,11 +73,11 @@ export default defineConfig({
             {
               text: 'Articles',
               items: [
-                { text: '2026-07-08 Whispers Under the Scholar Tree: Who Fed the "Local Emperors" at the Grassroots?', link: '/en/posts/2026-07/2026-07-08_3' },
+                { text: '2026-07-08 Whispers under the Scholar Tree: Who Fed the "Local Emperors"?', link: '/en/posts/2026-07/2026-07-08_3' },
                 { text: '2026-07-08 Making Friends Plentiful, and That Silent Bill', link: '/en/posts/2026-07/2026-07-08_2' },
-                { text: '2026-07-08 China\'s "Execution Line": Why Do Ordinary People Save Money So Desperately?', link: '/en/posts/2026-07/2026-07-08_1' },
+                { text: '2026-07-08 China\'s "Execution Line": Why Do Ordinary People Save So Desperately?', link: '/en/posts/2026-07/2026-07-08_1' },
                 { text: '2026-07-08 The Weight of "Guanxi" and the Barometer of a City', link: '/en/posts/2026-07/2026-07-08' },
-                { text: '2026-07-03 Is It Justified to Sacrifice the Interests of the Few to Protect the Many?', link: '/en/posts/2026-07/2026-07-03' },
+                { text: '2026-07-03 Sacrifice the Few to Protect the Many: Is It Ever Justified?', link: '/en/posts/2026-07/2026-07-03' },
                 { text: '2026-07-01 Airplanes in the Sky, Su-E on the Ground', link: '/en/posts/2026-07/2026-07-01' },
                 { text: '2026-06-30 Why Is Hangzhou, Zhejiang\'s Economy So Developed? 01', link: '/en/posts/2026-06/2026-06-30' },
                 { text: '2026-06-24 Why Can\'t You Pedal a Bicycle Standing Up?', link: '/en/posts/2026-06/2026-06-24_1' },
