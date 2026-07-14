@@ -121,7 +121,8 @@ export default defineConfig({
             {
               text: '文章',
               items: [
-                { text: '2026-07-10 刑不可知则威不可测：法度盲盒中的当代众生相', link: '/posts/2026-07/2026-07-10' },
+                { text: '2026-07-14 被剩下的优质女', link: '/posts/2026-07/2026-07-14' },
+                { text: '2026-07-10 刑不可知则威不可测：法度不确定性下的行为驯化', link: '/posts/2026-07/2026-07-10' },
                 { text: '2026-07-09 折旧的生命：普通人从“奉献者”到“社会成本”的结构性死局', link: '/posts/2026-07/2026-07-09_1' },
                 { text: '2026-07-09 天上只有一个太阳，以及那些容易被晒伤的“同志关系”', link: '/posts/2026-07/2026-07-09' },
                 { text: '2026-07-08 槐树下的悄悄话：谁养肥了村里的“土皇帝”？', link: '/posts/2026-07/2026-07-08_3' },
@@ -159,7 +160,8 @@ export default defineConfig({
             {
               text: 'Articles',
               items: [
-                { text: '2026-07-10 Punishment Unknown, Majesty Unmeasured: The Contemporary Blind Box of Law', link: '/en/posts/2026-07/2026-07-10' },
+                { text: '2026-07-14 The Leftover Premium Women', link: '/en/posts/2026-07/2026-07-14' },
+                { text: '2026-07-10 Punishment Unknown, Majesty Unmeasured: Behavioral Domestication under Legal Uncertainty', link: '/en/posts/2026-07/2026-07-10' },
                 { text: '2026-07-09 Depreciating Lives: From Young Sacrifices to Aging Social Costs', link: '/en/posts/2026-07/2026-07-09_1' },
                 { text: '2026-07-09 There Is Only One Sun: The Comedy of Socialist Bloc Relations', link: '/en/posts/2026-07/2026-07-09' },
                 { text: '2026-07-08 Whispers under the Scholar Tree: Who Fed the "Local Emperors"?', link: '/en/posts/2026-07/2026-07-08_3' },
@@ -197,7 +199,8 @@ export default defineConfig({
             {
               text: '記事一覧',
               items: [
-                { text: '2026-07-10 刑罰知らざれば威測り難し：現代における法の「ブラインドボックス」', link: '/ja/posts/2026-07/2026-07-10' },
+                { text: '2026-07-14 売れ残りの優秀な女性', link: '/ja/posts/2026-07/2026-07-14' },
+                { text: '2026-07-10 刑罰知らざれば威測り難し：法的不確実性下における行動の飼い慣らし', link: '/ja/posts/2026-07/2026-07-10' },
                 { text: '2026-07-09 減価償却される生命：若き「貢献者」から老後の「社会的コスト」への構造的デッドロック', link: '/ja/posts/2026-07/2026-07-09_1' },
                 { text: '2026-07-09 天に太陽は一つだけ：なぜ社会主義陣営の「同志」は衝突するのか？', link: '/ja/posts/2026-07/2026-07-09' },
                 { text: '2026-07-08 槐の木の下での密談：誰が農村の「地元の皇帝」を肥え太らせたのか？', link: '/ja/posts/2026-07/2026-07-08_3' },
