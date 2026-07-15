@@ -121,7 +121,7 @@ export default defineConfig({
             {
               text: '文章',
               items: [
-                { text: '2026-07-15 慈善最怕只剩下“做过”：从一则知乎回答看基金会的信任困局', link: '/posts/2026-07/2026-07-15' },
+                { text: '2026-07-15 鸡脚芝士谈慈善基金会（全文引用）', link: '/posts/2026-07/2026-07-15' },
                 { text: '2026-07-14 被剩下的优质女', link: '/posts/2026-07/2026-07-14' },
                 { text: '2026-07-10 刑不可知则威不可测：法度不确定性下的行为驯化', link: '/posts/2026-07/2026-07-10' },
                 { text: '2026-07-09 折旧的生命：普通人从“奉献者”到“社会成本”的结构性死局', link: '/posts/2026-07/2026-07-09_1' },
@@ -161,7 +161,7 @@ export default defineConfig({
             {
               text: 'Articles',
               items: [
-                { text: '2026-07-15 When Charity Is Reduced to “We Did Something”', link: '/en/posts/2026-07/2026-07-15' },
+                { text: '2026-07-15 A Zhihu Answer on Charity Foundations (Full Translation)', link: '/en/posts/2026-07/2026-07-15' },
                 { text: '2026-07-14 The Leftover Premium Women', link: '/en/posts/2026-07/2026-07-14' },
                 { text: '2026-07-10 Punishment Unknown, Majesty Unmeasured: Behavioral Domestication under Legal Uncertainty', link: '/en/posts/2026-07/2026-07-10' },
                 { text: '2026-07-09 Depreciating Lives: From Young Sacrifices to Aging Social Costs', link: '/en/posts/2026-07/2026-07-09_1' },
@@ -201,7 +201,7 @@ export default defineConfig({
             {
               text: '記事一覧',
               items: [
-                { text: '2026-07-15 慈善が「やった」で終わるとき：知乎の回答から見る基金会の信頼危機', link: '/ja/posts/2026-07/2026-07-15' },
+                { text: '2026-07-15 慈善基金会を語る知乎回答（全文訳）', link: '/ja/posts/2026-07/2026-07-15' },
                 { text: '2026-07-14 売れ残りの優秀な女性', link: '/ja/posts/2026-07/2026-07-14' },
                 { text: '2026-07-10 刑罰知らざれば威測り難し：法的不確実性下における行動の飼い慣らし', link: '/ja/posts/2026-07/2026-07-10' },
                 { text: '2026-07-09 減価償却される生命：若き「貢献者」から老後の「社会的コスト」への構造的デッドロック', link: '/ja/posts/2026-07/2026-07-09_1' },
