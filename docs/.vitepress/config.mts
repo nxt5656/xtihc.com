@@ -121,6 +121,7 @@ export default defineConfig({
             {
               text: '文章',
               items: [
+                { text: '2026-07-15 好人为什么总被踩一脚', link: '/posts/2026-07/2026-07-15_1' },
                 { text: '2026-07-15 鸡脚芝士谈慈善基金会（全文引用）', link: '/posts/2026-07/2026-07-15' },
                 { text: '2026-07-14 被剩下的优质女', link: '/posts/2026-07/2026-07-14' },
                 { text: '2026-07-10 刑不可知则威不可测：法度不确定性下的行为驯化', link: '/posts/2026-07/2026-07-10' },
@@ -161,6 +162,7 @@ export default defineConfig({
             {
               text: 'Articles',
               items: [
+                { text: '2026-07-15 Why Good People Get Stepped On', link: '/en/posts/2026-07/2026-07-15_1' },
                 { text: '2026-07-15 A Zhihu Answer on Charity Foundations (Full Translation)', link: '/en/posts/2026-07/2026-07-15' },
                 { text: '2026-07-14 The Leftover Premium Women', link: '/en/posts/2026-07/2026-07-14' },
                 { text: '2026-07-10 Punishment Unknown, Majesty Unmeasured: Behavioral Domestication under Legal Uncertainty', link: '/en/posts/2026-07/2026-07-10' },
@@ -201,6 +203,7 @@ export default defineConfig({
             {
               text: '記事一覧',
               items: [
+                { text: '2026-07-15 なぜ善人ほど踏みつけられるのか', link: '/ja/posts/2026-07/2026-07-15_1' },
                 { text: '2026-07-15 慈善基金会を語る知乎回答（全文訳）', link: '/ja/posts/2026-07/2026-07-15' },
                 { text: '2026-07-14 売れ残りの優秀な女性', link: '/ja/posts/2026-07/2026-07-14' },
                 { text: '2026-07-10 刑罰知らざれば威測り難し：法的不確実性下における行動の飼い慣らし', link: '/ja/posts/2026-07/2026-07-10' },
