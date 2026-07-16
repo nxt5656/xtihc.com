@@ -1,10 +1,58 @@
 import { defineConfig } from 'vitepress'
+import { readdir } from 'node:fs/promises'
+import { fileURLToPath } from 'node:url'
+import { join, relative } from 'node:path'
+
+const musicDirectory = fileURLToPath(new URL('../public/music', import.meta.url))
+const musicPlaylistModule = 'virtual:xtihc-music-playlist'
+const resolvedMusicPlaylistModule = `\0${musicPlaylistModule}`
+const supportedMusicExtensions = ['.ogg', '.mp3']
+
+async function findMusicFiles(directory: string): Promise<string[]> {
+  try {
+    const entries = await readdir(directory, { withFileTypes: true })
+    const nestedFiles = await Promise.all(entries.map(async (entry) => {
+      const entryPath = join(directory, entry.name)
+      if (entry.isDirectory()) return findMusicFiles(entryPath)
+      const isMusicFile = supportedMusicExtensions.some((extension) => entry.name.toLowerCase().endsWith(extension))
+      return entry.isFile() && isMusicFile ? [entryPath] : []
+    }))
+
+    return nestedFiles.flat()
+  } catch (error: any) {
+    if (error.code === 'ENOENT') return []
+    throw error
+  }
+}
+
+function musicPlaylistPlugin() {
+  return {
+    name: 'xtihc-music-playlist',
+    resolveId(id: string) {
+      return id === musicPlaylistModule ? resolvedMusicPlaylistModule : undefined
+    },
+    async load(id: string) {
+      if (id !== resolvedMusicPlaylistModule) return undefined
+
+      const files = await findMusicFiles(musicDirectory)
+      const playlist = files
+        .map((file) => `/music/${relative(musicDirectory, file).replace(/\\/g, '/')}`)
+        .sort((left, right) => left.localeCompare(right, 'zh-CN'))
+        .map((file) => encodeURI(file))
+
+      return `export default ${JSON.stringify(playlist)}`
+    }
+  }
+}
 
 export default defineConfig({
   // 全局共享基础配置
   base: '/',
   cleanUrls: true,
   lastUpdated: true,
+  vite: {
+    plugins: [musicPlaylistPlugin()]
+  },
   sitemap: {
     hostname: 'https://xtihc.com',
     transformItems: (items) => {
