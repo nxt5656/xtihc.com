@@ -169,6 +169,7 @@ export default defineConfig({
             {
               text: '文章',
               items: [
+                { text: '2026-07-27 为什么说腐败问题不能被彻底根除？', link: '/posts/2026-07/2026-07-27' },
                 { text: '2026-07-17 我们用计算机都在干什么?', link: '/posts/2026-07/2026-07-17_1' },
                 { text: '2026-07-17 祖国没有危难', link: '/posts/2026-07/2026-07-17' },
                 { text: '2026-07-15 好人为什么总被踩一脚', link: '/posts/2026-07/2026-07-15_1' },
@@ -212,6 +213,7 @@ export default defineConfig({
             {
               text: 'Articles',
               items: [
+                { text: "2026-07-27 Why Can't Corruption Be Completely Eradicated?", link: '/en/posts/2026-07/2026-07-27' },
                 { text: '2026-07-17 What Are We Doing with Computers?', link: '/en/posts/2026-07/2026-07-17_1' },
                 { text: '2026-07-17 The Homeland Is Not in Peril', link: '/en/posts/2026-07/2026-07-17' },
                 { text: '2026-07-15 Why Good People Get Stepped On', link: '/en/posts/2026-07/2026-07-15_1' },
@@ -255,6 +257,7 @@ export default defineConfig({
             {
               text: '記事一覧',
               items: [
+                { text: '2026-07-27 腐敗問題はなぜ完全には根絶できないのか？', link: '/ja/posts/2026-07/2026-07-27' },
                 { text: '2026-07-17 私たちはコンピュータで何をしているのか？', link: '/ja/posts/2026-07/2026-07-17_1' },
                 { text: '2026-07-17 祖国に危難はない', link: '/ja/posts/2026-07/2026-07-17' },
                 { text: '2026-07-15 なぜ善人ほど踏みつけられるのか', link: '/ja/posts/2026-07/2026-07-15_1' },
