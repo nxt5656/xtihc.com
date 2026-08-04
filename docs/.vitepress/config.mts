@@ -169,6 +169,7 @@ export default defineConfig({
             {
               text: '文章',
               items: [
+                { text: '2026-08-04 中医严父', link: '/posts/2026-08/2026-08-04' },
                 { text: '2026-07-31 当今世界最先进医学水平的治疗能力', link: '/posts/2026-07/2026-07-31' },
                 { text: '2026-07-27 为什么说腐败问题不能被彻底根除？', link: '/posts/2026-07/2026-07-27' },
                 { text: '2026-07-17 我们用计算机都在干什么?', link: '/posts/2026-07/2026-07-17_1' },
@@ -214,6 +215,7 @@ export default defineConfig({
             {
               text: 'Articles',
               items: [
+                { text: '2026-08-04 The Stern Father of Traditional Chinese Medicine', link: '/en/posts/2026-08/2026-08-04' },
                 { text: "2026-07-31 The Treatment Capabilities of Today's Most Advanced Medicine", link: '/en/posts/2026-07/2026-07-31' },
                 { text: "2026-07-27 Why Can't Corruption Be Completely Eradicated?", link: '/en/posts/2026-07/2026-07-27' },
                 { text: '2026-07-17 What Are We Doing with Computers?', link: '/en/posts/2026-07/2026-07-17_1' },
@@ -259,6 +261,7 @@ export default defineConfig({
             {
               text: '記事一覧',
               items: [
+                { text: '2026-08-04 中医学という厳父', link: '/ja/posts/2026-08/2026-08-04' },
                 { text: '2026-07-31 現代世界の最先端医療が持つ治療能力', link: '/ja/posts/2026-07/2026-07-31' },
                 { text: '2026-07-27 腐敗問題はなぜ完全には根絶できないのか？', link: '/ja/posts/2026-07/2026-07-27' },
                 { text: '2026-07-17 私たちはコンピュータで何をしているのか？', link: '/ja/posts/2026-07/2026-07-17_1' },
