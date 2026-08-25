@@ -169,6 +169,7 @@ export default defineConfig({
             {
               text: '文章',
               items: [
+                { text: '2026-08-25 我们,为什么要在网络这样激情对线?', link: '/posts/2026-08/2026-08-25_1' },
                 { text: '2026-08-25 普通人如何尽快的推动社会的变革,来让国家变的更好', link: '/posts/2026-08/2026-08-25' },
                 { text: '2026-08-04 中医严父', link: '/posts/2026-08/2026-08-04' },
                 { text: '2026-07-31 当今世界最先进医学水平的治疗能力', link: '/posts/2026-07/2026-07-31' },
@@ -216,6 +217,7 @@ export default defineConfig({
             {
               text: 'Articles',
               items: [
+                { text: '2026-08-25 Why Do We Get Into Such Heated Arguments Online?', link: '/en/posts/2026-08/2026-08-25_1' },
                 { text: '2026-08-25 How Ordinary People Can Quickly Drive Change for a Better Country', link: '/en/posts/2026-08/2026-08-25' },
                 { text: '2026-08-04 The Stern Father of Traditional Chinese Medicine', link: '/en/posts/2026-08/2026-08-04' },
                 { text: "2026-07-31 The Treatment Capabilities of Today's Most Advanced Medicine", link: '/en/posts/2026-07/2026-07-31' },
@@ -263,6 +265,7 @@ export default defineConfig({
             {
               text: '記事一覧',
               items: [
+                { text: '2026-08-25 なぜ私たちはネットでこれほど激しく言い争うのか？', link: '/ja/posts/2026-08/2026-08-25_1' },
                 { text: '2026-08-25 普通の人が社会変革を早め、国をより良くするには', link: '/ja/posts/2026-08/2026-08-25' },
                 { text: '2026-08-04 中医学という厳父', link: '/ja/posts/2026-08/2026-08-04' },
                 { text: '2026-07-31 現代世界の最先端医療が持つ治療能力', link: '/ja/posts/2026-07/2026-07-31' },
