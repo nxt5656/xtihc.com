@@ -1,5 +1,5 @@
 <script setup>
-import { ref, computed } from 'vue'
+import { ref, computed, watch } from 'vue'
 import { useData } from 'vitepress'
 import { data as allPosts } from '../posts.data.ts' // 引入刚才生成的编译时数据 [9]
 
@@ -60,6 +60,10 @@ const allTags = computed(() => {
 // 2. 记录当前选中的标签（若为 null 则展示全部文章）
 const selectedTag = ref(null)
 
+watch(currentLangPrefix, () => {
+  selectedTag.value = null
+})
+
 // 3. 点击标签时的切换逻辑
 const toggleTag = (tag) => {
   if (selectedTag.value === tag) {
@@ -80,14 +84,16 @@ const filteredPosts = computed(() => {
   <div class="tags-container">
     <!-- 标签云区 -->
     <div class="tag-cloud">
-      <span 
+      <button
+        type="button"
         v-for="tag in allTags" 
         :key="tag"
         :class="['tag-item', { active: selectedTag === tag }]"
+        :aria-pressed="selectedTag === tag"
         @click="toggleTag(tag)"
       >
         # {{ tag }}
-      </span>
+      </button>
     </div>
 
     <hr class="divider"/>
@@ -128,14 +134,20 @@ const filteredPosts = computed(() => {
   border-radius: 20px;
   background-color: var(--vp-c-bg-alt);
   border: 1px solid var(--vp-c-divider);
+  color: var(--vp-c-text-1);
   cursor: pointer;
   transition: all 0.25s ease;
+  font-family: inherit;
   font-size: 0.9rem;
 }
 .tag-item:hover, .tag-item.active {
   background-color: var(--vp-c-brand-1);
   color: white;
   border-color: var(--vp-c-brand-1);
+}
+.tag-item:focus-visible {
+  outline: 2px solid var(--vp-c-brand-1);
+  outline-offset: 2px;
 }
 .divider {
   border: 0;
@@ -168,13 +180,18 @@ const filteredPosts = computed(() => {
   color: var(--vp-c-brand-1);
   text-decoration: none;
   flex-grow: 1;
+  min-width: 0;
+  overflow-wrap: anywhere;
 }
 .post-link:hover {
   text-decoration: underline;
 }
 .post-tags {
   display: flex;
+  flex-wrap: wrap;
   gap: 6px;
+  min-width: 0;
+  max-width: 40%;
 }
 .mini-tag {
   font-size: 0.8rem;
@@ -182,5 +199,19 @@ const filteredPosts = computed(() => {
   background-color: var(--vp-c-bg-alt);
   padding: 2px 6px;
   border-radius: 4px;
+  overflow-wrap: anywhere;
+}
+@media (max-width: 640px) {
+  .post-item {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    gap: 6px;
+  }
+  .post-date {
+    min-width: 0;
+  }
+  .post-tags {
+    max-width: none;
+  }
 }
 </style>

@@ -70,9 +70,12 @@ function updateVolume() {
 }
 
 onMounted(() => {
-  const savedVolume = Number(localStorage.getItem('xtihc-music-volume'))
-  if (Number.isFinite(savedVolume) && savedVolume >= 0 && savedVolume <= 1) {
-    volume.value = savedVolume
+  const storedVolume = localStorage.getItem('xtihc-music-volume')
+  if (storedVolume !== null) {
+    const savedVolume = Number(storedVolume)
+    if (Number.isFinite(savedVolume) && savedVolume >= 0 && savedVolume <= 1) {
+      volume.value = savedVolume
+    }
   }
 
   if (audio.value) audio.value.volume = volume.value
@@ -84,7 +87,7 @@ onMounted(() => {
     <audio
       ref="audio"
       :src="currentTrack"
-      preload="metadata"
+      preload="none"
       @play="isPlaying = true"
       @pause="isPlaying = false"
       @ended="playNext"

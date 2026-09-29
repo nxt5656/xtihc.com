@@ -94,8 +94,4 @@ Whenever a new article is added:
 2. Add any referenced image assets under `docs/public/images/posts/...`.
 3. Update the sidebar in `docs/.vitepress/config.mts` for `root`, `en`, and `ja` locales.
 4. Put the newest article at the top of the respective sidebar lists.
-5. Run the build to verify everything works:
-   ```sh
-   npm run docs:build
-   ```
-   If the build fails, report it clearly.
+5. GitHub Actions runs `npm ci` and `npm run docs:build` when changes are pushed to `main`, then publishes GitHub Pages. A local build or test is not required. Check the workflow result and report any failure clearly.

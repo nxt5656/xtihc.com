@@ -1,5 +1,5 @@
 <script setup>
-import { ref, computed, onMounted } from 'vue'
+import { ref, computed, onMounted, watch } from 'vue'
 import { useData } from 'vitepress'
 import { data as allPosts } from '../posts.data.ts'
 
@@ -36,14 +36,20 @@ const i18n = {
 
 const randomPosts = ref([])
 
-onMounted(() => {
+const pickRandomPosts = () => {
   const posts = langFilteredPosts.value
-  if (posts && posts.length > 0) {
-    // Fisher-Yates shuffle
-    const shuffled = [...posts].sort(() => 0.5 - Math.random())
-    randomPosts.value = shuffled.slice(0, 3)
+  const shuffled = [...posts]
+  for (let i = shuffled.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1))
+    const swappedPost = shuffled[i]
+    shuffled[i] = shuffled[j]
+    shuffled[j] = swappedPost
   }
-})
+  randomPosts.value = shuffled.slice(0, 3)
+}
+
+onMounted(pickRandomPosts)
+watch(currentLangPrefix, pickRandomPosts)
 </script>
 
 <template>

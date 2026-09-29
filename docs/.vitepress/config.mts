@@ -71,7 +71,7 @@ export default defineConfig({
   ],
 
   // 动态构建 HTML Head (Canonical URLs, hreflang, Open Graph, Twitter Cards, Schema JSON-LD)
-  async transformHead({ pageData }) {
+  async transformHead({ pageData, description }) {
     const head: any[] = []
 
     // 1. 规范链接 (Canonical URL) 规避重复内容分散权重
@@ -94,37 +94,34 @@ export default defineConfig({
     head.push(['link', { rel: 'alternate', hreflang: 'x-default', href: `https://xtihc.com/${basePath}` }])
 
     // 3. 社交分享元数据 (Open Graph & Twitter Cards)
-    const title = pageData.frontmatter.title || 'xtihc'
-    const description = pageData.frontmatter.description || '记录生活观察、社会批判、硬件技术、仪器改装与人生思考的个人独立博文随心录。'
-    const ogImage = pageData.frontmatter.image ? `https://xtihc.com${pageData.frontmatter.image}` : 'https://xtihc.com/favicon.ico'
+    const title = pageData.frontmatter.title || pageData.title || 'xtihc'
+    const ogImage = pageData.frontmatter.image
+      ? new URL(pageData.frontmatter.image, 'https://xtihc.com').href
+      : undefined
+    const isPost = /^(?:en\/|ja\/)?posts\//.test(pageData.relativePath)
 
     head.push(['meta', { property: 'og:title', content: title }])
     head.push(['meta', { property: 'og:description', content: description }])
-    head.push(['meta', { property: 'og:type', content: 'article' }])
+    head.push(['meta', { property: 'og:type', content: isPost ? 'article' : 'website' }])
     head.push(['meta', { property: 'og:url', content: canonicalUrl }])
-    head.push(['meta', { property: 'og:image', content: ogImage }])
+    if (ogImage) head.push(['meta', { property: 'og:image', content: ogImage }])
 
-    head.push(['meta', { name: 'twitter:card', content: 'summary_large_image' }])
+    head.push(['meta', { name: 'twitter:card', content: ogImage ? 'summary_large_image' : 'summary' }])
     head.push(['meta', { name: 'twitter:title', content: title }])
     head.push(['meta', { name: 'twitter:description', content: description }])
-    head.push(['meta', { name: 'twitter:image', content: ogImage }])
+    if (ogImage) head.push(['meta', { name: 'twitter:image', content: ogImage }])
 
     // 4. Schema.org BlogPosting 结构化数据 (JSON-LD) 以展示富媒体搜索卡片
-    if (pageData.relativePath.includes('/posts/') && !pageData.relativePath.endsWith('start.md')) {
-      let datePublished = pageData.frontmatter.date
-      if (!datePublished) {
-        const pathParts = pageData.relativePath.split('/')
-        const fileName = pathParts[pathParts.length - 1]
-        const dateMatch = fileName.match(/^(\d{4}-\d{2}-\d{2})/)
-        datePublished = dateMatch ? `${dateMatch[1]}T00:00:00Z` : '2026-07-08T00:00:00Z'
-      }
+    const dateMatch = pageData.relativePath.match(/(?:^|\/)posts\/\d{4}-\d{2}\/(\d{4}-\d{2}-\d{2})(?:_\d+)?\.md$/)
+    const datePublished = pageData.frontmatter.date || dateMatch?.[1]
+    if (isPost && datePublished) {
 
       const jsonLd = {
         '@context': 'https://schema.org',
         '@type': 'BlogPosting',
         'headline': title,
         'description': description,
-        'image': [ogImage],
+        ...(ogImage ? { image: [ogImage] } : {}),
         'datePublished': datePublished,
         'author': [{
           '@type': 'Person',
