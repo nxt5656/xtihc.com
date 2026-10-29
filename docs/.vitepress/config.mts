@@ -166,6 +166,7 @@ export default defineConfig({
             {
               text: '文章',
               items: [
+                { text: '2026-10-29 原始人部落(1)', link: '/posts/2026-10/2026-10-29' },
                 { text: '2026-09-25 关于生育', link: '/posts/2026-09/2026-09-25' },
                 { text: '2026-08-25 我们,为什么要在网络这样激情对线?', link: '/posts/2026-08/2026-08-25_1' },
                 { text: '2026-08-25 普通人如何尽快的推动社会的变革,来让国家变的更好', link: '/posts/2026-08/2026-08-25' },
@@ -215,6 +216,7 @@ export default defineConfig({
             {
               text: 'Articles',
               items: [
+                { text: '2026-10-29 A Primitive Tribe (1)', link: '/en/posts/2026-10/2026-10-29' },
                 { text: '2026-09-25 On Having Children', link: '/en/posts/2026-09/2026-09-25' },
                 { text: '2026-08-25 Why Do We Get Into Such Heated Arguments Online?', link: '/en/posts/2026-08/2026-08-25_1' },
                 { text: '2026-08-25 How Ordinary People Can Quickly Drive Change for a Better Country', link: '/en/posts/2026-08/2026-08-25' },
@@ -264,6 +266,7 @@ export default defineConfig({
             {
               text: '記事一覧',
               items: [
+                { text: '2026-10-29 原始人の部族(1)', link: '/ja/posts/2026-10/2026-10-29' },
                 { text: '2026-09-25 子どもを持つことについて', link: '/ja/posts/2026-09/2026-09-25' },
                 { text: '2026-08-25 なぜ私たちはネットでこれほど激しく言い争うのか？', link: '/ja/posts/2026-08/2026-08-25_1' },
                 { text: '2026-08-25 普通の人が社会変革を早め、国をより良くするには', link: '/ja/posts/2026-08/2026-08-25' },
