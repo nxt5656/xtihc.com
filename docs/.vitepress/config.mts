@@ -166,6 +166,7 @@ export default defineConfig({
             {
               text: '文章',
               items: [
+                { text: '2026-11-08 解放', link: '/posts/2026-11/2026-11-08' },
                 { text: '2026-11-06 张角的符水并不能治病，为何这么多人相信他？', link: '/posts/2026-11/2026-11-06' },
                 { text: '2026-11-02 如何看待姆巴佩的道歉？', link: '/posts/2026-11/2026-11-02' },
                 { text: '2026-10-29 原始人部落(1)', link: '/posts/2026-10/2026-10-29' },
@@ -218,6 +219,7 @@ export default defineConfig({
             {
               text: 'Articles',
               items: [
+                { text: '2026-11-08 Liberation', link: '/en/posts/2026-11/2026-11-08' },
                 { text: '2026-11-06 Zhang Jiao’s Water Couldn’t Heal. Why Did People Believe?', link: '/en/posts/2026-11/2026-11-06' },
                 { text: '2026-11-02 What to Make of Mbappé’s Apology?', link: '/en/posts/2026-11/2026-11-02' },
                 { text: '2026-10-29 A Primitive Tribe (1)', link: '/en/posts/2026-10/2026-10-29' },
@@ -270,6 +272,7 @@ export default defineConfig({
             {
               text: '記事一覧',
               items: [
+                { text: '2026-11-08 解放', link: '/ja/posts/2026-11/2026-11-08' },
                 { text: '2026-11-06 張角の符水は病を治せないのに、なぜ多くの人が信じたのか？', link: '/ja/posts/2026-11/2026-11-06' },
                 { text: '2026-11-02 エムバペの謝罪をどう見るか？', link: '/ja/posts/2026-11/2026-11-02' },
                 { text: '2026-10-29 原始人の部族(1)', link: '/ja/posts/2026-10/2026-10-29' },
