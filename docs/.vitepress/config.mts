@@ -166,6 +166,7 @@ export default defineConfig({
             {
               text: '文章',
               items: [
+                { text: '2026-11-09 为什么国内有一部分人那么怕“赢”？（知乎回答转载）', link: '/posts/2026-11/2026-11-09_2' },
                 { text: '2026-11-09 你曾经历过哪些思想上的巨大逆转？（知乎回答转载）', link: '/posts/2026-11/2026-11-09_1' },
                 { text: '2026-11-09 严打与依法治国（知乎回答转载）', link: '/posts/2026-11/2026-11-09' },
                 { text: '2026-11-08 解放', link: '/posts/2026-11/2026-11-08' },
@@ -221,6 +222,7 @@ export default defineConfig({
             {
               text: 'Articles',
               items: [
+                { text: '2026-11-09 Why Are Some People in China So Afraid of “Winning”? (Zhihu Replies)', link: '/en/posts/2026-11/2026-11-09_2' },
                 { text: '2026-11-09 What Have Been Your Biggest Changes of Mind? (Translated from Zhihu)', link: '/en/posts/2026-11/2026-11-09_1' },
                 { text: '2026-11-09 Crackdowns and the Rule of Law (Translated from Zhihu)', link: '/en/posts/2026-11/2026-11-09' },
                 { text: '2026-11-08 Liberation', link: '/en/posts/2026-11/2026-11-08' },
@@ -276,6 +278,7 @@ export default defineConfig({
             {
               text: '記事一覧',
               items: [
+                { text: '2026-11-09 なぜ中国には「勝つ」ことをそんなに恐れる人がいるのか？（知乎回答の翻訳）', link: '/ja/posts/2026-11/2026-11-09_2' },
                 { text: '2026-11-09 これまでに、考え方が大きく変わった経験は？（知乎回答の翻訳）', link: '/ja/posts/2026-11/2026-11-09_1' },
                 { text: '2026-11-09 「厳打」と法に基づく統治（知乎回答の翻訳）', link: '/ja/posts/2026-11/2026-11-09' },
                 { text: '2026-11-08 解放', link: '/ja/posts/2026-11/2026-11-08' },
